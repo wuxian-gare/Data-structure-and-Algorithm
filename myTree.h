@@ -1,6 +1,7 @@
 /*
 * Part of the questions here is from leetcode(https://leetcode.com/).
-*
+* 主要是二叉树的常见算法
+* 英语水平有限，所以还是用中文注释
 */
 
 #include "head.h"	//my own head file
