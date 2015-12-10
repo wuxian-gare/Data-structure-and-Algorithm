@@ -1,6 +1,8 @@
 # Data-structure-and-Algorithm
 # Commonly used data structures and algorithms
 # 包含的大多数问题都来自Leetcode(https://leetcode.com/)
+# 编程语言为C++
+#
 # 算法问题主要分为：
 #   myTree.h:     关于二叉树的算法
 #   myVector.h:   关于vector的算法
