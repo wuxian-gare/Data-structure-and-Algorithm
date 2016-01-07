@@ -454,6 +454,7 @@ public:
 	* Leetcode #199：Binary Tree Right Side View
 	* 返回一棵树的右视图
 	* 使用一个vector<TreeNode *> Node存下每层的所有节点
+	* 使用其他容器例如queue是不是更优？
 	*/
 	vector<int> rightSideView(TreeNode* root) {
 		vector<int> res;
