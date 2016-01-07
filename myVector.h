@@ -698,8 +698,28 @@ int minNumberInRotateArray(vector<int> rotateArray) {
             	    }
         	}	
     	}
-
-
+        
+        /*
+        * 从上往下打印出二叉树的每个节点，同层节点从左至右打印
+        * 使用队列来作为存储每层节点的容器
+        */
+        vector<int> PrintFromTopToBottom(TreeNode *root) {
+		queue<TreeNode *> store;
+        	vector<int> res;
+        	if(NULL==root)
+            		return res;
+        	store.push(root);
+        	while(!store.empty()){
+            		struct TreeNode *temp=store.front();
+            		res.push_back(temp->val);
+            		store.pop();
+            		if(temp->left)
+            			store.push(temp->left);
+            		if(temp->right)
+            			store.push(temp->right);
+        		}
+        	return res;
+    	}
 
 	/*end of class myVector*/
 	int max(int a, int b){
