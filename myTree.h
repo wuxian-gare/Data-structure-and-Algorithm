@@ -15,10 +15,10 @@ struct TreeNode {
 
 class myTree{
 public:
-  /*
+       /*
 	*创建二叉树,用于方便程序测试
 	*函数参数为一个包含节点数值的vector,返回创建成功之后的二叉树根节点
-  *暂以val为0表示空节点，可自行更改
+        *暂以val为0表示空节点，可自行更改
 	*/
 	TreeNode *createTree(vector<int> a){ //0表示空节点
 		int size = a.size();
@@ -478,7 +478,35 @@ public:
 			res.push_back(Node[Node.size() - 1]->val);		//存入最右边的数
 		}
 	}
-
+	
+	/*
+	* 输入两颗二叉树A，B，判断B是不是A的子结构
+	*/
+        bool HasSubtree(TreeNode* pRoot1, TreeNode* pRoot2){
+        	if(pRoot2==NULL)
+            		return false;
+		if((pRoot1==NULL&&pRoot2!=NULL))
+            		return false;
+        	if((pRoot1==NULL&&pRoot2==NULL))
+            		return false;
+        	if(pRoot1->val==pRoot2->val){
+            		if(Check(pRoot1,pRoot2))
+                		return true;
+        	}
+        	return HasSubtree(pRoot1->left,pRoot2)||HasSubtree(pRoot1->right,pRoot2);
+    }
+    
+    	bool Check(TreeNode* pRoot1, TreeNode* pRoot2){
+        	if((pRoot1==NULL&&pRoot2!=NULL))
+            		return false;
+        	if(pRoot2==NULL)
+            		return true;
+        	if(pRoot1->val!=pRoot2->val)
+            		return false;
+        	return Check(pRoot1->left,pRoot2->left)&&Check(pRoot1->right,pRoot2->right);
+    }
+        
+        
 	/*max()  min()函数*/
 	int max(int a, int b){
 		return a > b ? a : b;
